@@ -1,7 +1,8 @@
 let mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-
-
+const MLSSchema=require('./MLSModel')
+const FlipSchema=require('./FlipModel')
+const SqftSchema=require('./SqftRepairModel')
+const UnitsSchema=require('./UnitsRepairModel')
 let userSchema = mongoose.Schema({
     userName:{
         type:String,
@@ -19,6 +20,10 @@ let userSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
+    MLSCalculator:[MLSSchema],
+    FlipCalculator:[FlipSchema],
+    SqftRepairCalculator:[SqftSchema],
+    UnitsRepairCalculator:[UnitsSchema],
     token: {
         type: String,
     },
