@@ -18,20 +18,16 @@ router.get('/get_all_users', async (req, res) => {
     }
 
 });
-router.post('/:userId/update-profile', async (req, res) => {
+router.put('/:userId/update-profile', async (req, res) => {
     try {
         const { userId } = req.params
         const { email, mobileNumber,userName} = req.body
         
-        if (!userId) {
-            return res.status(400).json({ message: 'Invalid User Id' });
-        }
-
 
         const currentUser = await User.findOne({ _id: userId });
 
         if (!currentUser) {
-            return res.status(404).json({ message: 'user  not found' });
+            return res.status(404).json({ message: 'user not found' });
         }
         if (email) {
             currentUser.email = email
