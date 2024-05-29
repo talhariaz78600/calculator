@@ -1,50 +1,49 @@
 let mongoose = require('mongoose');
 let MLSSchema=mongoose.Schema({
     AsIsvalue:{
-        type:Number
+        type:String
     },
     MLSprofit:{
-        type:Number
+        type:String
     },
     RealtorFee:{
-        type:Number
+        type:String
     },
     Amount:{
-        type:Number
+        type:String
     },
     AttorneyFee:{
-        type:Number
+        type:String
     },
     TitleInsurance:{
-        type:Number
+        type:String
     },
     EFileFee:{
-        type:Number
+        type:String
     },
     RecordingFee:{
-        type:Number
+        type:String
     },
     StateTax:{
-        type:Number
+        type:String
     },
     ProfessionalPhotos:{
-        type:Number
+        type:String
     },
     OtherExpenses:{
-        type:Number
+        type:String
     },
     TotalCost:{
-        type:Number
+        type:String
     },
     MaxStrategyOffer:{
-        type:Number
+        type:String
     },
     MaxWholesaleOffer:{
-        type:Number
+        type:String
     },
     date:{
         type:Date,
-        default:Date.now
 
     }
     

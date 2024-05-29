@@ -1,73 +1,77 @@
 let mongoose = require('mongoose');
 let FlipSchema=mongoose.Schema({
     ARV:{
-        type:Number
+        type:String
     },
     FlipperProfit:{
-        type:Number
+        type:String
     },
     HoldTime:{
-        type:Number
+        type:String
     },
     RepairCosts:{
-        type:Number
+        type:String
     },
     Realtor:{
-        type:Number
+        type:String
     },
     RealtorAmount:{
-        type:Number
+        type:String
     },
     ClosingCost:{
-        type:Number
+        type:String
     },
     ClosingAmount:{
-        type:Number
+        type:String
     },
     Taxes:{
-        type:Number
+        type:String
     },
     TaxesAmount:{
-        type:Number
+        type:String
     },
     MonthlyHQA:{
-        type:Number
+        type:String
     },
     MonthlyAmount:{
-        type:Number
+        type:String
     },
     TotalPropertyCosts:{
-        type:Number
+        type:String
     },
     LoanAmount:{
-        type:Number
+        type:String
     },
     InterestRate:{
-        type:Number
+        type:String
     },
     TotalInterest:{
-        type:Number
+        type:String
     },
     Points:{
-        type:Number
+        type:String
     },
     PointsAmount:{
-        type:Number
+        type:String
     },
     TotalMoneyCost:{
-        type:Number
+        type:String
     },
     Wholesale:{
-        type:Number
+        type:String
     },
     TotalCosts:{
-        type:Number
+        type:String
     },
     MaxFlipperOffer:{
-        type:Number
+        type:String
     },
     WholesalePrice:{
-        type:Number
+        type:String
+    },
+    date:{
+        type:Date,
+        default:Date.now
     }
     
 })

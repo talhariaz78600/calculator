@@ -1,61 +1,61 @@
 const mongoose=require('mongoose');
 const UnitsSchema=mongoose.Schema({
     FoundationCost:{
-        type:Number
+        type:String
     },
     FoundationUnits:{
-        type:Number
+        type:String
     },
     FoundationTotal:{
-        type:Number
+        type:String
     },
     RoofCost:{
-        type:Number
+        type:String
     },
     RoofUnits:{
-        type:Number
+        type:String
     },
     RoofTotal:{
-        type:Number
+        type:String
     },
     HVACCost:{
-        type:Number
+        type:String
     },
     HVACUnits:{
-        type:Number
+        type:String
     },
     HVACTotal:{
-        type:Number
+        type:String
     },
     WaterCost:{
-        type:Number
+        type:String
     },
     WaterUnits:{
-        type:Number
+        type:String
     },
     WaterTotal:{
-        type:Number
+        type:String
     },
     KitchenCost:{
-        type:Number
+        type:String
     },
     KitchenUnits:{
-        type:Number
+        type:String
     },
     KitchenTotal:{
-        type:Number
+        type:String
     },
     BathroomsCost:{
-        type:Number
+        type:String
     },
     BathroomsUnits:{
-        type:Number
+        type:String
     },
     BathroomsTotal:{
-        type:Number
+        type:String
     },
     TotalCost:{
-        type:Number
+        type:String
     },date:{
         type:Date,
         default:Date.now

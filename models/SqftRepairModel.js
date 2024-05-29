@@ -1,43 +1,43 @@
 const mongoose=require('mongoose')
 const SqftSchema=mongoose.Schema({
     DeckCost:{
-        type:Number
+        type:String
     },
     DeckSqft:{
-        type:Number
+        type:String
     },
     DeckTotal:{
-        type:Number
+        type:String
     },
     FlooringCost:{
-        type:Number
+        type:String
     },
     FlooringSqft:{
-        type:Number
+        type:String
     },
     FlooringTotal:{
-        type:Number
+        type:String
     },
     InteriorCost:{
-        type:Number
+        type:String
     },
     InteriorSqft:{
-        type:Number
+        type:String
     },
     InteriorTotal:{
-        type:Number
+        type:String
     },
     ExteriorCost:{
-        type:Number
+        type:String
     },
     ExteriorSqft:{
-        type:Number
+        type:String
     },
     ExteriorTotal:{
-        type:Number
+        type:String
     },
     TotalCost:{
-        type:Number
+        type:String
     },date:{
         type:Date,
         default:Date.now

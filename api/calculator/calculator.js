@@ -5,6 +5,7 @@ const User = require("../../models/Mongoousers")
 /////////////////////////////// /api/calculate/createMLS/:userId //////////////////////////
 router.put('/createMLS/:userId', async (req, res) => {
     const { userId } = req.params;
+    console.log(req.body)
     const {
         AsIsvalue,
         MLSprofit,
@@ -21,6 +22,9 @@ router.put('/createMLS/:userId', async (req, res) => {
         MaxStrategyOffer,
         MaxWholesaleOffer } = req.body;
     try {
+        if(!AsIsvalue || !MLSprofit || ! RealtorFee || !Amount || !AttorneyFee || !TitleInsurance || !EFileFee || !RecordingFee || !OtherExpenses ||  !TotalCost || !MaxStrategyOffer || !MaxWholesaleOffer){
+            return res.status(400).json({message:"Null entery"})
+        }
         const user= await User.findOne({_id:userId})
         if(!user){
             return res.status(400).json({message:"User not found"})
@@ -40,7 +44,8 @@ router.put('/createMLS/:userId', async (req, res) => {
             OtherExpenses,
             TotalCost,
             MaxStrategyOffer,
-            MaxWholesaleOffer
+            MaxWholesaleOffer,
+            date : new Date()
         })
          await user.save();
          res.status(200).json({message:"data successfully added",user})
@@ -119,6 +124,33 @@ router.put('/createFlip/:userId', async (req, res) => {
         if(!user){
             return res.status(400).json({message:"User not found"})
         }
+
+        if( !ARV ||
+            !FlipperProfit||
+            !HoldTime||
+            !RepairCosts||
+            !Realtor||
+            !RealtorAmount||
+            !ClosingCost||
+            !ClosingAmount||
+            !Taxes||
+            !TaxesAmount||
+            !MonthlyHQA||
+            !MonthlyAmount||
+            !TotalPropertyCosts||
+            !LoanAmount||
+            !InterestRate||
+            !TotalInterest||
+            !Points||
+            !PointsAmount||
+            !TotalMoneyCost||
+            !Wholesale||
+            !TotalCosts||
+            !MaxFlipperOffer||
+            !WholesalePrice){
+                return res.status(400).json({message:"Null entery"})
+            }
+
         user.FlipCalculator.push({
             ARV,
             FlipperProfit,
@@ -205,6 +237,21 @@ router.put('/createSqf/:userId', async (req, res) => {
         ExteriorTotal,
         TotalCost}=req.body;
     try {
+        if(  !DeckCost||
+            !DeckSqft||
+            !DeckTotal||
+            !FlooringCost||
+            !FlooringSqft||
+            !FlooringTotal||
+            !InteriorCost||
+            !InteriorSqft||
+            !InteriorTotal||
+            !ExteriorCost||
+            !ExteriorSqft||
+            !ExteriorTotal||
+            !TotalCost){
+                return res.status(400).json({message:"Null entery"})
+            }
         const user= await User.findOne({_id:userId})
         if(!user){
             return res.status(400).json({message:"User not found"})
@@ -293,6 +340,32 @@ router.put('/createUnits/:userId', async (req, res) => {
         
         }=req.body;
     try {
+
+        if(        
+            !FoundationCost||
+            !FoundationUnits||
+            !FoundationTotal||
+            !RoofCost||
+            !RoofUnits||
+            !RoofTotal||
+            !HVACCost||
+            !HVACUnits||
+            !HVACTotal||
+            !WaterCost||
+            !WaterUnits||
+            !WaterTotal||
+            !KitchenCost||
+            !KitchenUnits||
+            !KitchenTotal||
+            !BathroomsCost||
+            !BathroomsUnits||
+            !BathroomsTotal||
+            !TotalCost){
+                return res.status(400).json({message:"Null entery"})
+            }
+
+
+
         const user= await User.findOne({_id:userId})
         if(!user){
             return res.status(400).json({message:"User not found"})
