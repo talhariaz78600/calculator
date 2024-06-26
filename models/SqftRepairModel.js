@@ -36,6 +36,15 @@ const SqftSchema=mongoose.Schema({
     ExteriorTotal:{
         type:String
     },
+    ExteriorsidingSqft:{
+        type:String
+    },
+    ExteriorsidingCost:{
+        type:String
+    },
+    ExteriorsidingTotal:{
+        type:String
+    },
     TotalCost:{
         type:String
     },date:{

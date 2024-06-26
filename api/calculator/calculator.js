@@ -234,6 +234,9 @@ router.put('/createSqf/:userId', async (req, res) => {
         InteriorTotal,
         ExteriorCost,
         ExteriorSqft,
+        ExteriorsidingSqft,
+        ExteriorsidingCost,
+        ExteriorsidingTotal,
         ExteriorTotal,
         TotalCost}=req.body;
     try {
@@ -249,7 +252,12 @@ router.put('/createSqf/:userId', async (req, res) => {
             !ExteriorCost||
             !ExteriorSqft||
             !ExteriorTotal||
-            !TotalCost){
+
+            !TotalCost||
+            !ExteriorsidingSqft||
+            !ExteriorsidingCost||
+            !ExteriorsidingTotal
+        ){
                 return res.status(400).json({message:"Null entery"})
             }
         const user= await User.findOne({_id:userId})
@@ -269,6 +277,9 @@ router.put('/createSqf/:userId', async (req, res) => {
             ExteriorCost,
             ExteriorSqft,
             ExteriorTotal,
+            ExteriorsidingSqft,
+            ExteriorsidingCost,
+            ExteriorsidingTotal,
             TotalCost})
          await user.save();
          res.status(200).json({message:"data successfully added",user})
@@ -363,9 +374,6 @@ router.put('/createUnits/:userId', async (req, res) => {
             !TotalCost){
                 return res.status(400).json({message:"Null entery"})
             }
-
-
-
         const user= await User.findOne({_id:userId})
         if(!user){
             return res.status(400).json({message:"User not found"})
